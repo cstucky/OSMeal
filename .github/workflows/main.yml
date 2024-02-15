@@ -1,0 +1,24 @@
+name: OSMeal Build
+run-name: ${{ github.actor }} has pushed changes.
+on: [push]
+jobs:
+  OSMeal_Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+      - name: NPM Install
+        run: npm install
+      - name: Test
+        run: npm run test
+      - name: Build
+        run: npm run build
+      - name: Android Build
+        run: npx cap sync && cd android && gradle build
+      - run: echo "Status - ${{ job.status }}."
