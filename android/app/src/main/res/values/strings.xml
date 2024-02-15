@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">OSMeal</string>
+    <string name="title_activity_main">OSMeal</string>
+    <string name="package_name">com.osmeal.app</string>
+    <string name="custom_url_scheme">com.osmeal.app</string>
+</resources>
