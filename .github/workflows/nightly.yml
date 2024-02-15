@@ -1,12 +1,12 @@
-name: OSMeal Build (master)
+name: OSMeal Build (nightly)
 run-name: ${{ github.actor }} has pushed changes.
 on:
   pull_request:
     branches:
-      - 'master'
+      - 'nightly'
   push:
     branches:
-      - 'master'
+      - 'nightly'
 jobs:
   OSMeal_Build:
     runs-on: ubuntu-latest
